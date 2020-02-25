@@ -22,9 +22,7 @@ System.out.println(
 System.out.println(chalk.bgRgb(121, 41, 71).white().apply("RGB background!"));
 ```
 
-<p align="left">
-  <img height="300" src="https://imgur.com/FKLLP7n.jpg">
-</p>
+![img](https://imgur.com/FKLLP7n.jpg)
 
 ## API
 

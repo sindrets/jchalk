@@ -31,3 +31,9 @@ System.out.println(chalk.bgRgb(121, 41, 71).white().apply("RGB background!"));
 ### `chalk.<style>()[.<style>()...].apply(string)`
 
 Example: `chalk.red().bold().underline().apply("Hello world");`
+
+## Build instructions
+
+```sh
+$ ./gradlew build
+```

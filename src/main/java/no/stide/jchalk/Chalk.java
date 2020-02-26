@@ -30,15 +30,9 @@ public class Chalk {
         String openers = this.getOpeners();
         String closers = this.getClosers();
         MatchResult[] escapes = ansiEscapeRegex.matcher(text).results().toArray(MatchResult[]::new);
-        // reverse list
-        for(int i = 0; i < escapes.length / 2; i++) {
-            MatchResult temp = escapes[i];
-            escapes[i] = escapes[escapes.length - i - 1];
-            escapes[escapes.length - i - 1] = temp;
-        }
-        for (MatchResult e : escapes) {
-            String value = e.group();
-            if (ANSI_CLOSERS.contains(value)) {
+        for (int i = escapes.length - 1; i > 0; i--) {
+            MatchResult e = escapes[i];
+            if (ANSI_CLOSERS.contains(e.group())) {
                 text = text.substring(0, e.end()) + openers + text.substring(e.end());
                 break;
             }

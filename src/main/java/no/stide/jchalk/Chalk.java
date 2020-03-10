@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Chalk {
@@ -29,9 +30,13 @@ public class Chalk {
     public String apply(String text) {
         String openers = this.getOpeners();
         String closers = this.getClosers();
-        MatchResult[] escapes = ansiEscapeRegex.matcher(text).results().toArray(MatchResult[]::new);
-        for (int i = escapes.length - 1; i > 0; i--) {
-            MatchResult e = escapes[i];
+        Matcher matcher = ansiEscapeRegex.matcher(text);
+        ArrayList<MatchResult> escapes = new ArrayList<>();
+        while (matcher.find()) {
+            escapes.add(matcher.toMatchResult());
+        }
+        for (int i = escapes.size() - 1; i > 0; i--) {
+            MatchResult e = escapes.get(i);
             if (ANSI_CLOSERS.contains(e.group())) {
                 text = text.substring(0, e.end()) + openers + text.substring(e.end());
                 break;

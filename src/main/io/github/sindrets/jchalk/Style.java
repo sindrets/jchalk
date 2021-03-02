@@ -1,4 +1,4 @@
-package no.stide.jchalk;
+package io.github.sindrets.jchalk;
 
 import java.util.function.Function;
 
@@ -16,3 +16,4 @@ public class Style implements Function<String, String> {
         return this.open + text + this.close;
     }
 }
+

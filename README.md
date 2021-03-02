@@ -22,7 +22,7 @@ System.out.println(
 System.out.println(chalk.bgRgb(121, 41, 71).white().apply("RGB background!"));
 ```
 
-![img](https://imgur.com/FKLLP7n.jpg)
+![img](https://i.imgur.com/FKLLP7n.png)
 
 ## API
 
@@ -33,5 +33,5 @@ Example: `chalk.red().bold().underline().apply("Hello world");`
 ## Build instructions
 
 ```sh
-$ ./gradlew build
+$ ant
 ```

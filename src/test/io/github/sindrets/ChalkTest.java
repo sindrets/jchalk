@@ -1,7 +1,8 @@
-package io.github.sindrets.jchalk;
+package io.github.sindrets;
 
-import no.stide.fling.TestGroup;
-import no.stide.fling.TestInitiator;
+import io.github.sindrets.fling.TestGroup;
+import io.github.sindrets.fling.TestInitiator;
+import io.github.sindrets.jchalk.Chalk;
 
 public class ChalkTest {
 

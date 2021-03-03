@@ -48,14 +48,14 @@
         <jar destfile="build/artifacts/jchalk-${project.version}.jar">
             <fileset dir="build/classes/main" includes="**/*.class" />
             <manifest>
-                <attribute name="Implementation-Name" value="${project.name}" />
+                <attribute name="Implementation-Title" value="${project.name}" />
                 <attribute name="Implementation-Version" value="${project.version}" />
             </manifest>
         </jar>
         <jar destfile="build/artifacts/jchalk-${project.version}-sources.jar">
             <fileset dir="src/main" includes="**/*.java" />
             <manifest>
-                <attribute name="Implementation-Name" value="${project.name}" />
+                <attribute name="Implementation-Title" value="${project.name}" />
                 <attribute name="Implementation-Version" value="${project.version}" />
             </manifest>
         </jar>
@@ -79,7 +79,7 @@
     </target>
 
     <target name="test" depends="compile-test" description="Run tests">
-        <java jar="lib/fling-1.1.2.jar" failonerror="true" fork="true">
+        <java jar="lib/fling-1.2.0.jar" failonerror="true" fork="true">
             <arg value="build/classes/main:build/classes/test"/>
         </java>
     </target>
